@@ -1,2 +1,33 @@
-Calculating TAS complexity
+Calculating TAS complexity :
     1. In DSA, we don't include class, main method, declarations or definitions while calculating time complexity. Only the core logic or statements that affect execution time are considered.
+    2. only Executable statements are responsible for calculating time complexity
+        e.g.
+            public class UnderstandingTAS {     // Not considered
+                public static void main(String[] args) {    // Not considered
+                    for (int i = 1; i <= 500; i++) {      // Considered (loop executes)
+                        System.out.println("Hello");    // Considered (loop executes)
+                    }
+                }
+            }
+    3. When we run a program on different machines or multiple times, the execution time varies de to hardware and system differences. So we measures time complexity in terms of "unit of time" because unit is same for every system, not in seconds or milliseconds etc.
+        Why we use “unit of time”
+            Execution time varies depending on:
+                Hardware
+                Operating system
+                Load on the machine
+            So, instead of seconds or milliseconds, we measure time complexity in “units of time”, which remains consistent across all systems.
+        e.g.
+            public class UnderstandingTAS {
+                public static void main(String[] args) {
+                            1Unit    1Unit    1Unit
+                              ||       ||      ||
+                              V        V       V
+                    for (int i = 1; i <= 500; i++) {
+                        System.out.println("Hello");
+                                              ^
+                                              ||
+                                              1Unit
+                    }
+                }
+            }
+            All these executable statements need 1 unit of time to execute

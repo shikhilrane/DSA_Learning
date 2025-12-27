@@ -1,0 +1,2 @@
+Calculating TAS complexity
+    1. In DSA, we don't include class, main method, declarations or definitions while calculating time complexity. Only the core logic or statements that affect execution time are considered.

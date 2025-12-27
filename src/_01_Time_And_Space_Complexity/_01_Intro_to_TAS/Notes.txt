@@ -1,0 +1,38 @@
+Time and Space Complexity :
+    Time Complexity
+    Algorithm 1 --> 1 seconds to execute --> 1 MB space
+    Algorithm 2 --> 2 seconds to execute --> 2 MB space
+
+Example :
+    If there are two shopping app,
+    Algorithm used by Shopping App 1,
+        --> 1 seconds to execute --> 1 MB space
+            --> 2 seconds to execute = for 1 Lakh user
+                --> 3 seconds to execute = for 2 Lakh user
+                    --> 4 seconds to execute = for 3 Lakh user
+    Algorithm used by Shopping App 2,
+        --> 2 seconds to execute --> 2 MB space
+            --> 2.5 seconds to execute = for 1 Lakh user
+                --> 3 seconds to execute = for 2 Lakh user
+                    --> 3.5 seconds to execute = for 3 Lakh user
+    Answer : Even though Shopping App 1 is faster for a small number of users, its execution time increases more rapidly as the number of users grows.
+             Shopping App 2 starts slower, but its execution time grows more slowly as the number of users increases.
+             Therefore, the algorithm used by Shopping App 2 is more efficient because it scales better with increasing input size (users).
+
+Time Complexity =
+    It is a time an algorithm takes as the input size increases
+Space Complexity =
+    It is a additional space/memory than an algorithm uses as the input size increases
+
+
+Real-World Example
+Traffic Signal System
+    Small city → Fixed timing traffic lights work fine.
+    Big city → Fixed timing causes traffic jams.
+    Smart traffic lights (based on traffic density) scale better.
+    Same logic: better scalability = better algorithm
+
+
+Calculating TAS complexity
+    1. In DSA, we don't include class, main method, declarations or definitions while calculating time complexity. Only the core logic or statements that affect execution time are considered
+

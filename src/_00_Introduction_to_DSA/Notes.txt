@@ -1,0 +1,69 @@
+Data Structure : How we store and organize data
+Algorithm : Step-by-step process to solve any particular problem efficiently
+
+Data Structure and Algorithm : Step-by-step procedure to store and organize data in efficient way
+
+Types of Data Structure :
+    A. Linear DS : Stores data elements in a sequential (linear) manner.
+        1. Array - Index based
+        2. LinkedList - pointer/address
+        3. Stack - vertical memory with LIFO mechanism
+        4. Queue - horizontal memory with FIFO mechanism
+    B. Non-Linear DS :
+        1. Tree – A hierarchical structure with parent-child relationships and a single root node.
+        2. Binary Tree – A tree where each node has at most two children.
+        3. Binary Search Tree (BST) – A binary tree where left < root < right, enabling fast search.
+        4. Heap – A complete binary tree that follows min-heap or max-heap property.
+        5. Graph – A collection of vertices (nodes) and edges representing relationships.
+        6. Trie – A prefix-based tree used mainly for fast string searching (dictionary-like).
+    C. Hashing DS
+        1. HashMap - Stores key-value pairs, allows one null key, and is not synchronized.
+        2. Hashtable – Stores key-value pairs but is synchronized and does not allow null keys or values.
+        3. HashSet – Stores unique elements only, internally backed by a HashMap.
+        4. LinkedHashMap – Maintains insertion order while storing key-value pairs.
+        5. LinkedHashSet – Maintains insertion order with unique elements.
+        6. TreeMap – Stores key-value pairs in sorted order using a Red-Black Tree.
+
+    Operations on DS : Insertion, Traverse, Deletion, Updation, Insertion in middle, etc.
+
+Types of Algorithm :
+    A. Searching Algorithms : Used to find an element in a data set.
+        1. Linear Search – Checks each element one by one until the target is found.
+        2. Binary Search – Searches by dividing a sorted list into halves, reducing search space each time.
+
+    B. Sorting Algorithms : Used to arrange data in a specific order (ascending/descending).
+        1. Bubble Sort – Repeatedly swaps adjacent elements if they are in the wrong order.
+        2. Selection Sort – Repeatedly selects the smallest element and places it at the correct position.
+        3. Insertion Sort – Builds the sorted list by inserting elements into their correct position.
+        4. Merge Sort – Uses divide and conquer to split, sort, and merge subarrays.
+        5. Heap Sort – Uses a heap data structure to repeatedly extract the max/min element.
+        6. Quick Sort – Uses divide and conquer with a pivot to partition and sort elements.
+
+Techniques : A general problem-solving approach or strategy using algorithms.
+    A. Divide and Conquer : Breaks a problem into smaller subproblems, solves them, and combines results.
+        1. Merge Sort - Divides array into halves, sorts, and merges.
+        2. Quick Sort - Partitions array around a pivot and sorts recursively.
+        3. Binary Search - Divides search space into halves.
+        Divide & Conquer is the idea, these are algorithms using that idea.
+
+    B. Greedy : Makes the locally optimal choice at each step.
+        1. Dijkstra’s Algorithm - Finds the shortest path in a weighted graph.
+        2. Kruskal’s Algorithm - Finds minimum spanning tree by selecting minimum edges.
+        3. Prim’s Algorithm - Builds minimum spanning tree starting from a node.
+        Greedy = make best local choice. Dijkstra, Kruskal, Prim apply greedy strategy.
+
+    C. Dynamic Programming (DP) : Solves problems by storing results of subproblems to avoid recomputation.
+        1. Fibonacci using DP - Stores previous values to optimize recursion.
+        2. Knapsack Problem - Maximizes value under weight constraints.
+        3. Longest Common Subsequence (LCS) - Finds longest matching sequence between two strings.
+        DP = store subproblem results. Problems solved using DP are algorithms.
+
+    D. Backtracking : Tries all possibilities and backtracks when a solution fails.
+        1. N-Queens - Places queens on a chessboard without conflict.
+        2. Sudoku Solver - Fills numbers by trial and error with constraints.
+        Backtracking = try → fail → undo → retry.
+
+    E. Recursion : A function calls itself to solve a smaller part of the problem.
+        1. Factorial - Solves n! by calling itself with n-1.
+        2. Tree Traversals - Inorder, Preorder, Postorder traversal.
+        Recursion is a way to implement an algorithm.

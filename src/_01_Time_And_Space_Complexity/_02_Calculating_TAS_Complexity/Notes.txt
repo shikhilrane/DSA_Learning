@@ -31,3 +31,40 @@ Calculating TAS complexity :
                 }
             }
             All these executable statements need 1 unit of time to execute
+
+Rules :
+    1. Each simple statement takes 1 unit of time
+    2. From Java file, Unit of Time section's example 1 and example 2, If there are constant values like 2,4,10,1000, etc. then we can denote it by 1. Because 1 always represents constant.
+    3. From Java file, Unit of Time section's example 3, A loop running n times takes n units of time
+    4. From Java file, Unit of Time section's example 4, Ignore constants
+        If one loop runs 'n' times and the nested loop runs a 'constant' number of times, then time complexity is n * constant, which is simplified to O(n). In TC analysis, constants are ignored, so we represented it as linear time.
+        This example can be represented as,
+            f(n) = 5n
+            f(n) = n
+            where, f(n) = mathematical function or simple function
+                   n = Time complexity
+    5. From Java file, Unit of Time section's example 5, If both inner and outer loop runs n times then it will run n² of times. (Multiply nested loops)
+        If one loop runs 'n' times and the nested loop runs a 'n' number of times, then time complexity is n * n, which is simplified to O(n²).
+    6. From Java file, Unit of Time section's example 6, Two separate loops, then add their complexity
+        If outer loop runs 'n' times and 1st nested loop runs 'n' number of times, then it will be n*n = n²
+        If outer loop runs 'n' times and 2nd nested loop runs 'n' number of times, then it will be n*n = n²
+        , then time complexity is n²*n² = 2n², by ignoring constants, which is simplified to O(n²).
+    7. From Java file, Unit of Time section's example 6, Drop lower power
+        The outer loop runs n times
+        Inside the outer loop:
+            The first nested loop runs n times : Time = n × n = n²
+            The second nested loop is a double nested loop : Loop k runs n times
+            Loop l runs n times for each k : Time = n × n × n = n³
+        Total time complexity : n² + n³
+        Time Complexity = O(n³) by ignoring lower term
+
+
+List of 8 Standard Time Complexities
+    1. 1       =   Constant Time
+    2. log n   =   Logarithmic Time
+    3. n       =   Linear Time
+    4. n log n =   Linearithmetic Time
+    5. n²      =   Quadratic Time
+    6. n³      =   Cubic Time
+    7. 2ⁿ      =   Exponential Time
+    8. n!      =   Factorial Time

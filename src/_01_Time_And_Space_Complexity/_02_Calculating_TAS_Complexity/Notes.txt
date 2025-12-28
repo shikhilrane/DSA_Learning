@@ -58,6 +58,13 @@ Rules :
         Total time complexity : n² + n³
         Time Complexity = O(n³) by ignoring lower term
 
+    Short notes :
+        1. TC of constant variable and conditionals are considered as O(1).
+        2. TC of loop runs 'n' times will be O(n)
+        3. TC in nested loop, if outer loop runs 'n' times and inner loop runs 5 times then TC will be O(n)
+        4. TC in nested loop, if both outer and inner loop runs 'n' times then TC will be O(n²)
+        5. TC in nested loop, if outer loop runs 'n' times and there are 2 separate inner loops that runs 'n' times then there TC will be O(n²)
+        6. TC in nested loop, if outer loop runs 'n' times and there are 2 separate inner loops and in second inner loop there is one more nested loop that even runs 'n' times, then TC will be equals to O(n³)
 
 List of 8 Standard Time Complexities
     1. 1       =   Constant Time
@@ -68,3 +75,11 @@ List of 8 Standard Time Complexities
     6. n³      =   Cubic Time
     7. 2ⁿ      =   Exponential Time
     8. n!      =   Factorial Time
+
+NOTES :
+    1. Constants = 1
+    2. loop runs n times = n
+    3. In nested loop, both inner and outer loop runs n times = n²
+    4. 3 times nested loop runs 'n' times = n³
+    5. Use 1 + 2 + 3 + ... + p = f(p) = p(p+1)/2 only when work increases per iteration like pyramid or right angle triangle = n² (if 3 layers of nesting then n³)
+    6. loop depends on the length of number of digits in number i.e. 'n' has 'd' digits then the loop runs d times = O(d) = log10(n) = O(log n)

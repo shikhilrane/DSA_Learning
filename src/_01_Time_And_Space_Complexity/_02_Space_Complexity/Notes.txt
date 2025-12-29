@@ -1,0 +1,12 @@
+Space Complexity :
+    1. The space complexity of an algorithm is total space taken by the algorithm with respect to input size. OR Space Complexity measures how memory usage grows as input size increases.
+    2. Space complexity include both auxiliary(Temporary) space and space used by an input
+    3. Same logic of time complexity is used to find space complexity
+    4. Even same annotations are used to denote space complexity
+    5. Examples :
+        int[] a = new int[n]        -->     S(n) = O(n)
+        int[] a = new int[10]       -->     S(n) = O(1)
+        int[][] a = new int[n][n]   -->     S(n) = O(n²)
+
+    NOTE : Time complexity is usually considered more important than space complexity,
+           because modern systems generally have sufficient memory, but execution time is critical.

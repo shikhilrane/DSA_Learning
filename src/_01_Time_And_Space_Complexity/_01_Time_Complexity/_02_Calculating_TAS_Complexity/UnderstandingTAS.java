@@ -1,4 +1,4 @@
-package _01_Time_And_Space_Complexity._02_Calculating_TAS_Complexity;
+package _01_Time_And_Space_Complexity._01_Time_Complexity._02_Calculating_TAS_Complexity;
 
 public class UnderstandingTAS {     // Not considered
     public static void main(String[] args) {    // Not considered

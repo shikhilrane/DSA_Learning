@@ -1,0 +1,29 @@
+Asymptotic Notations :
+    There are "Mathematical Tools" used to describe the time and space complexity of an algorithm in terms of "Input Size n". (Unit to describe time and space complexity)
+
+Types of Asymptotic Notations :
+    1. Big O (O)            --> Use to represent worst case (IMPORTANT -> We mostly found worst case of the program)
+    2. Omega (Ω)            --> Use to represent best case
+    3. Theta (Θ)            --> Use to represent average (Tight bound) case (When best case and worst case are the same)
+    4. Little o (o)         --> Use to represent upper bound (Algorithm grows slower than the given function)
+    5. Little omega (ω)     --> Use to represent lower bound (Algorithm grows faster than the given function)
+
+Why we mostly consider Worst Case scenario? :
+If there is a student who is best at History, average at Maths, and worst at Physics, then teacher/parents will focus Physics so that he won't get failed in Physics.
+So, Worst-case analysis means we prepare for the maximum problem that can happen, so the system never fails unexpectedly.
+
+Understanding Best-Case(Ω), Average-Case(Θ) and Worst-Case(O) analysis by Linear Search problem :
+        int[] n = {3,6,2,5};
+        int targetElement = 2;
+        for (int i = 0; i < n.length ; i++) {
+            if (n[i] == targetElement) {
+                System.out.println("target element found at index : " +  i);
+            }
+        }
+
+        Best Case Scenario : If element found at beginning position of the array, so pointer don't need to traverse whole array
+                             best case scenario = Ω(1)
+        Average Case Scenario : If element found at middle position of the array, so pointer has to traverse half array and don't need to traverse further
+                                average case scenario = Θ(n/2) = Θ(n) by ignoring constants
+        Worst Case Scenario : If element found at last position or not found of the array, so pointer has to traverse whole array
+                              worst case scenario = O(n)

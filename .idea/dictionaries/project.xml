@@ -2,6 +2,12 @@
   <dictionary name="project">
     <words>
       <w>linearithmetic</w>
+      <w>logᵦb</w>
+      <w>logₐb</w>
+      <w>logₐx</w>
+      <w>logₐxⁿ</w>
+      <w>logₖ</w>
+      <w>logₖk</w>
     </words>
   </dictionary>
 </component>

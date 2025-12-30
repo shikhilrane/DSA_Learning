@@ -150,9 +150,9 @@ public class UnderstandingTAS {     // Not considered
             System.out.println();
         }
         // f(p) = 1+2+3+4+...+p      (NOTE : Use 1 + 2 + 3 + ... + p only when work increases per iteration.)
-        // f(p) = p(p+1)/2           (Formula to get sum of series)
-        // f(p) = (p²/2) + (p/2)
-        // f(p) = p² + p
+        // f(p) = p(p-1)/2           (Formula to get sum of series)
+        // f(p) = (p²/2) - (p/2)
+        // f(p) = p² - p
         // TC = p²
 
 

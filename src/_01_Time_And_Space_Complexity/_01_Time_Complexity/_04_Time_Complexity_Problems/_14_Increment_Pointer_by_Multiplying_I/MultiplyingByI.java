@@ -20,5 +20,31 @@ public class MultiplyingByI {
                 .                           .
                 .                           .
                 p+1                               =   2^k    =   2^2^p
+
+                Total iterations are 'p'
+                so TC = O(p)
+                but we have to represent TC in terms of 'n'
+                so,
+                 = i <= n
+                 = 2^k <= n
+                 = log₂(2^k) <= log₂n
+                 = k log₂2 <= log₂n
+                 = k <= log n
+           TC(k) = O(log n)
+
+                This is a TC of 'k' but now we have to find TC in terms of 'p'
+                because, k = 2^p  (from last iteration)
+                so,
+                   = k = 2^p
+                   = log₂k = log₂(2^p)
+                   = log₂k = p log₂2
+                   = log₂k = p
+                so, value of p is,
+           p = log₂k
+
+                now putting value of 'k' in 'p'
+                 = log(log n)
+                so the complexity of 'p' is,
+                TC(p) = O(log(log n))
     */
 }

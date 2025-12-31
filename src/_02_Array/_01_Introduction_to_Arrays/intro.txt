@@ -1,0 +1,5 @@
+Array :
+    1. Arrays are linear data structure in which we can store the data in contiguous memory locations
+    2. Arrays are one of the data types that store only the same type of data i.e. we can't store int, float, long, byte etc. in a single array.
+    3. All the values stored in array must be of the same type as it should be only int or byte or char or float etc.
+    4. It stores data in contiguous manner

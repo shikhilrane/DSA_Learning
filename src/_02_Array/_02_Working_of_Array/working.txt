@@ -1,0 +1,8 @@
+Working of Array :
+    1. if we have to store 3 students data then we make separate variable for each data but what if we want to store data of billions counts, in that case it will be very hectic to make variable for each and every data
+    2. In that picture, arrays come into the picture we save n number of data within a single array
+    3. Dynamic Memory Allocation : added at the time of runtime
+    4. Array will be created as object, and it will be stored inside heap area
+    5. Array stores the data in contiguous manner
+        -> Primitive Data type  =  int, double, float, long, etc. directly stored in array
+        -> Non-Primitive Data Type = objects gets stored somewhere in heap memory and their address will be gets stored in array index.

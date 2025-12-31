@@ -5,4 +5,15 @@ Working of Array :
     4. Array will be created as object, and it will be stored inside heap area
     5. Array stores the data in contiguous manner
         -> Primitive Data type  =  int, double, float, long, etc. directly stored in array
+               Memory Address   -->    111 112 113 114 115 116
+               Array            -->   | 4 | 5 | 8 | 2 | 6 | 1 |
+               Index            -->     0   1   2   3   4   5
         -> Non-Primitive Data Type = objects gets stored somewhere in heap memory and their address will be gets stored in array index.
+                Memory Address   -->     111    112    113    114    115    116
+                Array            -->   | 4198 | 9387 | 3876 | 1003 | 8734 | 2095 |
+                Index            -->      0      1      2      3      4      5
+             Objects in heap memory :
+                 Address in Heap memory  ->   1003       2095        4198        3876        9387        8734
+                                            --------   --------    --------    --------    --------    --------
+                 Object  ->                 |  67  |   |  34  |    |  34  |    |  34  |    |  34  |    |  34  |
+                                            --------   --------    --------    --------    --------    --------

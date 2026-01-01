@@ -28,4 +28,6 @@ public class ShallowCopy {
 
 /*
     Original array changed, when we changed value of element of copyArr. Because,
+        When copy the elements of original array to new array, it actually doesn't copy the elements instead it just refer the address of original array
+        so when we update the value of copyArr, then value in original array will also get changed
 */

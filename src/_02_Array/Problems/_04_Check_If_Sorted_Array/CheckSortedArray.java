@@ -10,11 +10,11 @@ public class CheckSortedArray {
     }
 
     public static boolean sortedArray(int[] a) {
-        for (int i = 0; i < a.length-1; i++) {
-            if (a[i] >= a[i+1]) {
-                return false;
+        for (int i = 0; i < a.length-1; i++) {      // Traverse the array till its last index i.e. length-1
+            if (a[i] >= a[i+1]) {                   // If element from array greater than direct next element than array (Comparing 2-2 elements from array)
+                return false;                       // If greater, then return false (because if greater, then array can't be sorted array)
             }
         }
-        return true;
+        return true;                                // If fails to satisfy above condition then return true
     }
 }

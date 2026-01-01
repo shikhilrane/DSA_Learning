@@ -15,21 +15,21 @@ public class LastOcc {
     }
 
     public static int lastOcc(int[] a, int num){
-        for (int i = a.length-1; i >= 0 ; i--) {
-            if (a[i] == num) {
-                return i;
+        for (int i = a.length-1; i >= 0 ; i--) {            // Traverse the array in reverse order
+            if (a[i] == num) {                              // If element from array matches with targeted number
+                return i;                                   // Then return that number
             }
         }
-        return -1;
+        return -1;                                          // If targeted element is not found then return -1
     }
 
     public static int lastOccurrence(int[] a, int num){
-        int lastIndex = -1;
-        for (int i = 0; i <a.length ; i++) {
-            if (a[i] == num) {
-                lastIndex = i;
+        int lastIndex = -1;                                 // Create int variable with -1
+        for (int i = 0; i <a.length ; i++) {                // Traverse the array till its length
+            if (a[i] == num) {                              // If element from array matches with targeted number
+                lastIndex = i;                              // Store index of that element in lastIndex
             }
         }
-        return lastIndex;
+        return lastIndex;                                   // Return the lastIndex
     }
 }

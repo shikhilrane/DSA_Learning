@@ -46,5 +46,6 @@ public class DeepCopy {
 }
 
 /*
-    Original array doesn't change, when we changed value of element of copyArr. Because,
+    Original array doesn't change, when we changed value of element of copyArr. Because, copyArr will get referred to another array in heap
+
 */

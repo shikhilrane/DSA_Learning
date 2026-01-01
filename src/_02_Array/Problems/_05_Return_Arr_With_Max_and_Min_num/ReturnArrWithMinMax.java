@@ -14,8 +14,8 @@ public class ReturnArrWithMinMax {
     }
 
     public static int[] returnMaxMin(int[] a){
-        Arrays.sort(a);
-        int[] array = {a[0],a[a.length-1]};
-        return array;
+        Arrays.sort(a);                         // sort the array first
+        int[] array = {a[0],a[a.length-1]};     // save first element and last element in array
+        return array;                           // return array
     }
 }

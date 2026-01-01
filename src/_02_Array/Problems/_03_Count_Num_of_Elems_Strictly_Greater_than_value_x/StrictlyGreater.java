@@ -11,12 +11,12 @@ public class StrictlyGreater {
     }
 
     public static int countGreater(int[] a, int num){
-        int count = 0;
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] > num) {
-                count++;
+        int count = 0;                          // Created a counter that starts from 0
+        for (int i = 0; i < a.length; i++) {    // Traverse the array till its length
+            if (a[i] > num) {                   // If element from array greater than targeted number
+                count++;                        // Then increase the count
             }
         }
-        return count;
+        return count;                           // Reyrun the count
     }
 }

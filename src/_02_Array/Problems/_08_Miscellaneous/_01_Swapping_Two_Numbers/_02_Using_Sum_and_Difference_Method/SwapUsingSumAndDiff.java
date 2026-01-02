@@ -22,3 +22,10 @@ public class SwapUsingSumAndDiff {
         System.out.println("Value of b after swapping : " + b);
     }
 }
+
+/*
+    Logic :
+        add a and b
+        subtract b from a
+        now again subtract b from a
+*/

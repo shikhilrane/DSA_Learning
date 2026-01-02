@@ -11,14 +11,19 @@ public class SwapNumsTemp {
     }
 
     public static void swapNums(int a, int b){
-        System.out.println("Value of a before swapping : " + a);
-        System.out.println("Value of b before swapping : " + b);
+        System.out.println("Value of a before swapping : " + a);    // 9
+        System.out.println("Value of b before swapping : " + b);    // 3
 
-        int temp = a;
-        a = b;
-        b = temp;
+        int temp = a;       // temp = 9
+        a = b;              // a = 3
+        b = temp;           // b = 9
 
-        System.out.println("Value of a after swapping : " + a);
-        System.out.println("Value of b after swapping : " + b);
+        System.out.println("Value of a after swapping : " + a);     // 3
+        System.out.println("Value of b after swapping : " + b);     // 9
     }
 }
+
+/*
+    Logic :
+        save value of a in temp, b in a and then temp in b
+*/

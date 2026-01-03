@@ -50,8 +50,63 @@ public class QueriesAndFrequencyArray {
         int[] freq = new int[100001];
         // Step 6 : keep putting traverse an array
         for (int i = 0; i < a.length; i++) {
-            freq[a[i]]++;   // It will count the frequency of array elements from array (if in array, 4 comes 2 times then it will count as 2)
+            freq[a[i]]++;   // Increment frequency of element a[i]. (if in array, 4 comes 2 times then it will count as 2)
         }
         return freq;
     }
 }
+
+/*
+    Logic :
+        There is an array whose size can be up to 10 raise to power 5 (as per given in question)
+        so,
+            array = 4, 6, 3, 5, 8, 6, 5, 78, 54, 768, 757, 5456, 6565, 3, 65775, 5, 54656, ...
+        In this array there can be 10 raise to power 5 elements
+        and user will ask few continues queries to ask if these queries is present or not in this given array
+
+        So, there can be 100000 elements according to size, so array has to traverse fully for every single query, so it will increase the TC
+        so to reduce this problem we will use frequency array,
+            Frequency array stores the count of number of elements from given array. e.g. If 4 present 3 times then it will set frequency of 4 to 3
+        So when user puts a query, like 4 then it will check in frequency array, if frequency of 4 is greater than 0 or not(because the element whose frequency greater than 0, that element is present in frequency array),
+            If, yes it will return the 'YES' from frequency array
+            else, no it will return the 'NO' from frequency array
+
+
+
+
+
+    Visualisation :
+        array = 4, 6, 3, 5, 8, 6, 5, 78, 54, 768, 757, 5456, 6565, 3, 65775, 5, 54656, ...
+                                         3
+                                   2     2  2
+              Frequency =          1  1  1  1     1
+        Frequency Array = 0, 0, 0, 0, 0, 0, 0, 0, 0, .......
+                 Index  = 0  1  2  3  4  5  6  7  8  .......
+
+
+        Frequency Counting
+        ------------------
+        Element → Count
+        3   → 2
+        4   → 1
+        5   → 3
+        6   → 2
+        8   → 1
+        78  → 1
+        54  → 1
+        768 → 1
+        757 → 1
+        5456 → 1
+        6565 → 1
+        65775 → 1
+        54656 → 1
+
+        
+        Explanation
+        -----------
+        • Index of frequency array represents the number itself
+        • Value at that index represents how many times it occurs
+        • Example:
+            freq[5] = 3  → number 5 occurs three times
+            freq[3] = 2  → number 3 occurs two times
+*/

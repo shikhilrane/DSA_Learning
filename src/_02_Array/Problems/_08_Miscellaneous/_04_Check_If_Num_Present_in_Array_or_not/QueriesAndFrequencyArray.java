@@ -36,9 +36,9 @@ public class QueriesAndFrequencyArray {
             int x = sc.nextInt();
             // Step 11 : If any query found in array then return 'YES' else 'NO'
             if (freq[x] > 0) {
-                System.out.println("Yes");
+                System.out.println("YES, query " + x + " is present in the array");
             }else {
-                System.out.println("No");
+                System.out.println("NO, query " + x + " is not present in the array");
             }
             q--;
         }
@@ -87,21 +87,21 @@ public class QueriesAndFrequencyArray {
         Frequency Counting
         ------------------
         Element → Count
-        3   → 2
-        4   → 1
-        5   → 3
-        6   → 2
-        8   → 1
-        78  → 1
-        54  → 1
-        768 → 1
-        757 → 1
-        5456 → 1
-        6565 → 1
+        3     → 2
+        4     → 1
+        5     → 3
+        6     → 2
+        8     → 1
+        78    → 1
+        54    → 1
+        768   → 1
+        757   → 1
+        5456  → 1
+        6565  → 1
         65775 → 1
         54656 → 1
 
-        
+
         Explanation
         -----------
         • Index of frequency array represents the number itself

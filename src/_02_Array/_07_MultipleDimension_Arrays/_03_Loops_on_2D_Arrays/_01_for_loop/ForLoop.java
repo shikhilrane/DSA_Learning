@@ -12,7 +12,7 @@ public class ForLoop {
         };
         System.out.println(firstArr[1][2]);                 // this is how we can access specific element of an array
         for (int i = 0; i < firstArr.length; i++) {         // This loop will iterate over rows of 2D array
-            for (int j = 0; j < firstArr.length; j++) {     // This loop will iterate over column of 2D array
+            for (int j = 0; j < firstArr[i].length; j++) {     // This loop will iterate over column of 2D array
                 System.out.print(firstArr[i][j] + " ");
             }
             System.out.println();

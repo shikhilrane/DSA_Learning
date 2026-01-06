@@ -1,5 +1,7 @@
 package _02_Array.Problems._10_Prefix_Sum._02_Queries_Based_Prefix_Sum_of_Array_Element;
 
+// Check if we can partition the array into two subarrays into equal sum. More formally, check that the prefix sum of part of the array is equal to the suffix sum of rest of array
+
 import java.util.Scanner;
 
 public class PrefixSumQueries {

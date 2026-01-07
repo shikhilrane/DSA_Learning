@@ -14,9 +14,9 @@ public class PrefixSum_Optimised {
     }
 
     public static int[] makePrefixSumArray(int[] a){
-        for (int i = 1; i < a.length; i++) {
-            a[i] = a[i] + a[i-1];
+        for (int i = 1; i < a.length; i++) {    // Start from second element
+            a[i] = a[i] + a[i-1];               // Add previous sum to current value
         }
-        return a;
+        return a;                               // Return array after converting it to prefix sum
     }
 }

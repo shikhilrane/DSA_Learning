@@ -15,14 +15,12 @@ public class PrefixSum {
     }
 
     public static int[] makePrefixSumArray(int[] a){
-        int[] pref = new int[a.length];
-        pref[0] = a[0];
-
-        for (int i = 1; i < a.length; i++) {
-            pref[i] = pref[i-1] + a[i];
+    int[] pref = new int[a.length];             // New array to store prefix sums
+        pref[0] = a[0];                         // First prefix value is same as first element
+        for (int i = 1; i < a.length; i++) {    // Start from second element
+            pref[i] = pref[i-1] + a[i];         // Add current value to previous sum
         }
-
-        return pref;
+        return pref;                            // Return prefix sum array
     }
 }
 

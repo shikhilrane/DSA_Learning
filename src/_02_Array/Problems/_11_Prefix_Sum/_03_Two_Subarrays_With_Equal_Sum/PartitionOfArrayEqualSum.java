@@ -4,32 +4,31 @@ package _02_Array.Problems._11_Prefix_Sum._03_Two_Subarrays_With_Equal_Sum;
 
 public class PartitionOfArrayEqualSum {
     public static void main(String[] args) {
-        int[] array = {1,3,2,5,1,1};
+        int[] array = {6,3,2,5,1,1};
 
         boolean ans = givePartitionSum(array);
         System.out.println(ans);
     }
 
     public static boolean givePartitionSum(int[] a){
-        int totalSum = findArraySum(a);
-
-        int prefixSum = 0;
-        for (int i = 0; i < a.length; i++) {
-            prefixSum = prefixSum + a[i];
-            int suffixSum = totalSum - prefixSum;
-            if (prefixSum == suffixSum) {
-                return true;
+        int totalSum = findArraySum(a);         // Find total sum of the array
+        int prefixSum = 0;                      // Variable to store sum from left side
+        for (int i = 0; i < a.length; i++) {    // Go through each element
+            prefixSum = prefixSum + a[i];       // Add current element to prefix sum
+            int suffixSum = totalSum - prefixSum; // Remaining sum on right side
+            if (prefixSum == suffixSum) {       // Check if left and right sums are equal
+                return true;                    // Partition is possible
             }
         }
-        return false;
+        return false; // No partition found with equal sum
     }
 
     public static int findArraySum(int[] a){
-        int totalSum = 0;
-        for (int i = 0; i < a.length; i++) {
-            totalSum = totalSum + a[i];
+        int totalSum = 0;                       // Variable to store total sum
+        for (int i = 0; i < a.length; i++) {    // Go through each element
+            totalSum = totalSum + a[i];         // Add current element to total sum
         }
-        return totalSum;
+        return totalSum;                        // Return final sum of all elements
     }
 }
 

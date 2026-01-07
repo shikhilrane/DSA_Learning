@@ -12,9 +12,9 @@ public class SuffixSum {
     }
 
     public static int[] makeSuffixSumArray(int[] a){
-        for (int i = a.length-2; i >= 0; i--) {
-            a[i] = a[i] + a[i+1];
+        for (int i = a.length - 2; i >= 0; i--) {   // Start from second last element
+            a[i] = a[i] + a[i + 1];                 // Add next element sum to current value
         }
-        return a;
+        return a;                                   // Return array after converting it to suffix sum
     }
 }

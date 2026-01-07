@@ -19,25 +19,25 @@ public class Addition {
         add(array1,3,4,array2,3,4);
     }
 
-    public static void add(int[][]a, int r1, int c1, int[][] b, int r2, int c2){
-        if (r1!=r2 || c1!=c2) {
-            System.out.println("Wrong input, addition not possible");
-            return;
+    public static void add(int[][] a, int r1, int c1, int[][] b, int r2, int c2){
+        if (r1 != r2 || c1 != c2) {                                     // Check if both matrices have same size
+            System.out.println("Wrong input, addition not possible");   // Print error message
+            return;                                                     // Stop method execution
         }
 
-        int[][] sum = new int[r1][c1];
+        int[][] sum = new int[r1][c1];                                  // Create matrix to store sum
 
-        for (int i = 0; i < sum.length; i++) {
-            for (int j = 0; j < sum[i].length; j++) {
-                sum[i][j] = a[i][j] + b[i][j];
+        for (int i = 0; i < sum.length; i++) {                          // Loop through rows
+            for (int j = 0; j < sum[i].length; j++) {                   // Loop through columns
+                sum[i][j] = a[i][j] + b[i][j];                          // Add corresponding elements
             }
         }
 
-        for (int i = 0; i < sum.length; i++) {
-            for (int j = 0; j < sum[i].length; j++) {
-                System.out.print(sum[i][j] + " ");
+        for (int i = 0; i < sum.length; i++) {                          // Loop to print result matrix
+            for (int j = 0; j < sum[i].length; j++) {                   // Loop through columns
+                System.out.print(sum[i][j] + " ");                      // Print each sum value
             }
-            System.out.println();
+            System.out.println(); // Move to next row
         }
     }
 }

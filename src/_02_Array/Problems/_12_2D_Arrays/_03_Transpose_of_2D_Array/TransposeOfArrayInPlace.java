@@ -23,17 +23,17 @@ public class TransposeOfArrayInPlace {
     }
 
     public static void findTranspose(int[][] a, int r, int c){
-        for (int i = 0; i < a.length; i++) {
-            for (int j = i+1; j < a.length; j++) {
-                swap(a,i,j);
+        for (int i = 0; i < a.length; i++) {            // Loop through rows
+            for (int j = i + 1; j < a.length; j++) {    // Loop through columns above diagonal
+            swap(a, i, j);                              // Swap a[i][j] with a[j][i]
             }
         }
     }
 
     public static void swap(int[][] a, int i, int j){
-        int temp = a[i][j];
-        a[i][j] = a[j][i];
-        a[j][i] = temp;
+        int temp = a[i][j];     // Store value of a[i][j]
+        a[i][j] = a[j][i];      // Put value of a[j][i] into a[i][j]
+        a[j][i] = temp;         // Put stored value into a[j][i]
     }
 }
 

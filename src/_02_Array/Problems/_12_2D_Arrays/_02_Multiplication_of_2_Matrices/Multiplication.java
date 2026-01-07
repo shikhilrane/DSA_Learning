@@ -22,12 +22,12 @@ public class Multiplication {
     }
 
     public static void multiply(int[][]a, int r1, int c1, int[][] b, int r2, int c2){
-        if (c1!=r2) {
-            System.out.println("Wrong input, multiplication not possible");
-            return;
+        if (c1 != r2) {                                                     // Check if matrix multiplication is possible
+            System.out.println("Wrong input, multiplication not possible"); // Print error message
+            return;                                                         // Stop execution
         }
 
-        int[][] mul = new int[r1][c2];      // As per dimension of resultant matrix
+        int[][] mul = new int[r1][c2];                              // As per dimension of resultant matrix
 
         for (int i = 0; i < r1; i++) {                              // Iterating over rows of first matrix
             for (int j = 0; j < c2; j++) {                          // Iterating over columns of second matrix

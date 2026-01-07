@@ -18,18 +18,15 @@ public class PascalsTriangle {
     }
 
     public static int[][] pascal(int n){
-        int[][] ans = new int[n][];
-
-        for (int i = 0; i < n; i++) {
-            ans[i] = new int[i+1];
-            ans[i][0] = ans[i][i] = 1;
-
-            for (int j = 1; j < i; j++) {
-                ans[i][j] = ans[i-1][j] + ans[i-1][j-1];
+        int[][] ans = new int[n][];         // Create a 2D jagged array for Pascal's Triangle (Not provided no. of columns because it is unknown)
+        for (int i = 0; i < n; i++) {       // Loop through each row
+            ans[i] = new int[i + 1];        // Each row has (i + 1) elements
+            ans[i][0] = ans[i][i] = 1;      // First and last element of each row is always 1
+            for (int j = 1; j < i; j++) {   // Fill middle elements of the row
+                ans[i][j] = ans[i - 1][j] + ans[i - 1][j - 1]; // Sum of two elements above
             }
         }
-
-        return ans;
+        return ans;                 // Return Pascal's Triangle
     }
 }
 

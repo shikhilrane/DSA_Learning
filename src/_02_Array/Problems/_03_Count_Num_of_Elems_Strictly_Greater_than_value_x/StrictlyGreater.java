@@ -17,6 +17,6 @@ public class StrictlyGreater {
                 count++;                        // Then increase the count
             }
         }
-        return count;                           // Reyrun the count
+        return count;                           // Return the count
     }
 }

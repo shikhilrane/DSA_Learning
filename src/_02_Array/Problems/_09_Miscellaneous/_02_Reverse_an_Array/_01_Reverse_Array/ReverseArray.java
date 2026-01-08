@@ -24,6 +24,44 @@ public class ReverseArray {
 }
 
 /*
+    What the Question is Asking (Problem Understanding):
+
+    You are given:
+        - An integer array.
+
+    Your task:
+        - Reverse the array.
+        - Return a new array that contains the elements
+          of the original array in reverse order.
+
+    Important point:
+        - You are allowed to create a new array.
+        - The original array should NOT be modified.
+
+    What “reverse the array” means:
+        - First element becomes last
+        - Second element becomes second last
+        - And so on
+
+    Example:
+        Input array:
+            {1, 2, 3, 4, 5}
+
+        Output array:
+            {5, 4, 3, 2, 1}
+
+    What the question expects:
+        - Use an extra array
+        - Copy elements from the end of the original array
+          to the start of the new array
+
+    In short:
+        Create a new array and fill it by reading
+        the original array from back to front.
+*/
+
+
+/*
     Logic :
         Create new array and start adding element from last index of existing array in new array
 

@@ -35,6 +35,45 @@ public class RotateArrayWoutExtraSpace {
 }
 
 /*
+    What the Question is Asking:
+
+    You are given:
+        - An integer array 'a'
+        - A non-negative integer 'k'
+
+    Your task:
+        - Rotate the array to the right by 'k' steps
+        - Do this WITHOUT using any extra array (in-place)
+
+    Important note:
+        - k can be greater than the length of the array (n)
+        - So you must first reduce k using:
+              k = k % n
+
+    What "rotate by k steps" means:
+        - Elements shifted to the right
+        - Elements that move past the end
+          come back to the front
+
+    Example:
+        Array = {1, 2, 3, 4, 5, 6, 7}
+        k = 5
+
+        After rotation:
+            {3, 4, 5, 6, 7, 1, 2}
+
+    What the question expects:
+        - No extra space (no new array)
+        - Efficient solution
+        - Correct handling of large k values
+
+    In short:
+        Rotate the array to the right by k positions
+        using only the given array.
+*/
+
+
+/*
     Logic:
         1. Find the length of the array `n`.
         2. Reduce the value of k using:

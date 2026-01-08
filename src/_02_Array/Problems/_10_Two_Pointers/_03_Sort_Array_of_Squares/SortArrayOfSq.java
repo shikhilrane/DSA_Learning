@@ -55,5 +55,57 @@ public class SortArrayOfSq {
         a[i] = a[j];        // Replace first with second
         a[j] = temp;        // Put stored value in second
     }
-
 }
+
+/*
+    What the Question is Asking (Problem Understanding):
+
+    You are given:
+        - An integer array 'a'
+        - The array is already sorted in non-decreasing order
+          (may contain negative numbers)
+
+    Your task:
+        - Square every element of the array
+        - Return a new array where:
+              • All values are squared
+              • The result is still sorted in non-decreasing order
+
+    Important point:
+        - Squaring negative numbers makes them positive
+        - So simply squaring and keeping order will NOT work
+
+    Example:
+        Input:
+            a = {-10, -3, -2, 1, 4, 5}
+
+        After squaring:
+            {100, 9, 4, 1, 16, 25}   ❌ not sorted
+
+        Correct Output:
+            {1, 4, 9, 16, 25, 100}
+
+    What the question expects:
+        - Do NOT sort again using sort()
+        - Use the given sorted property cleverly
+        - Solve it efficiently using two pointers
+
+    In short:
+        Square all elements and return them
+        in sorted (non-decreasing) order.
+*/
+
+
+/*
+    Logic (Two Pointer – Short):
+
+    1. The array is already sorted, but may contain negative numbers.
+    2. Use two pointers at start and end.
+    3. Compare absolute values because bigger square comes from bigger absolute number.
+    4. Put the bigger square into result array.
+    5. Reverse result at the end to get non-decreasing order.
+
+    In short:
+        Compare absolute values from both ends,
+        store bigger squares first, then reverse.
+*/

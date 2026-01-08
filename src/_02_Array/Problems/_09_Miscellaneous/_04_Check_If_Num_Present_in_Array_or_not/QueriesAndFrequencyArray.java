@@ -57,6 +57,52 @@ public class QueriesAndFrequencyArray {
 }
 
 /*
+    What the Question is Asking (Problem Understanding):
+
+    You are given:
+        - An integer array
+        - Q queries
+        - Each query contains a number x
+
+    Your task:
+        - For every query, check whether the given number x
+          is present in the array or not.
+
+    Important condition given:
+        - All values in the array are less than 10^5
+        - This allows us to use a frequency array
+
+    What the question wants you to do:
+        - Preprocess the array so that each query
+          can be answered quickly
+        - Instead of searching the array again and again
+
+    How presence is checked:
+        - If the number appears at least once → print "YES"
+        - If the number does not appear → print "NO"
+
+    Example:
+        Array:
+            {2, 4, 6, 4, 9}
+
+        Queries:
+            4 → YES (present twice)
+            5 → NO
+            9 → YES
+
+    Why frequency array is used:
+        - Direct searching for each query is slow
+        - Frequency array allows O(1) lookup
+        - Index represents the number
+        - Value represents how many times it appears
+
+    In short:
+        Answer multiple presence queries efficiently
+        using a frequency array.
+*/
+
+
+/*
     Logic :
         There is an array whose size can be up to 10 raise to power 5 (as per given in question)
         so,

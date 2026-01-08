@@ -42,3 +42,37 @@ public class PrefixSumQueries {
         return a;                           // Return array after converting it to prefix sum
     }
 }
+
+/*
+    What the Question is Asking:
+
+    You are given an array and multiple range queries.
+
+    For each query (l, r):
+        - You need to find the sum of elements
+          from index l to index r.
+
+    Doing this with loops for every query is slow.
+
+    So the question expects you to:
+        - Pre-calculate prefix sum once
+        - Answer each query in O(1) time
+
+    In short:
+        Preprocess the array so that
+        range sum queries become fast.
+*/
+
+
+/*
+    Logic (Prefix Sum Queries):
+
+    1. Build prefix sum array.
+    2. prefixSum[i] stores sum from index 1 to i.
+    3. For any query (l, r):
+           sum = prefixSum[r] - prefixSum[l - 1]
+
+    In short:
+        Precompute prefix sum once,
+        answer each query in constant time.
+*/

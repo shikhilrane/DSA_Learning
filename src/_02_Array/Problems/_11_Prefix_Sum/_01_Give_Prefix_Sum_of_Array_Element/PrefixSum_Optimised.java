@@ -20,3 +20,14 @@ public class PrefixSum_Optimised {
         return a;                               // Return array after converting it to prefix sum
     }
 }
+
+/*
+    Logic (Prefix Sum – In-place):
+
+    1. Start from the second element of the array.
+    2. Add the previous element’s value to the current element.
+    3. Store the result back in the same array.
+
+    In short:
+        Each element stores the sum of all elements before it.
+*/

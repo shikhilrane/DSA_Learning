@@ -34,6 +34,47 @@ public class RotateArray {
 }
 
 /*
+    What the Question is Asking:
+
+    You are given:
+        - An integer array 'a'
+        - A non-negative integer 'k'
+
+    Your task:
+        - Rotate the array to the right by 'k' steps.
+
+    What "rotate by k steps" means:
+        - Elements shifted to the right
+        - Elements that go out from the end
+          come back to the front
+
+    Important note given:
+        - k can be greater than the length of the array (n)
+        - So k needs to be reduced using k % n
+
+    Example:
+        Array = {1, 2, 3, 4, 5, 6, 7}
+        k = 5
+
+        After rotation:
+            {3, 4, 5, 6, 7, 1, 2}
+
+    Why k % n is needed:
+        - Rotating n times gives the same array
+        - Extra rotations are unnecessary
+
+    What the question expects:
+        - Handle large values of k correctly
+        - Rotate efficiently
+        - Return the rotated array
+
+    In short:
+        Shift the array to the right by k positions,
+        wrapping elements back to the front.
+*/
+
+
+/*
     Logic:
         1. Find the length of the array `n`.
         2. Reduce the value of k using:

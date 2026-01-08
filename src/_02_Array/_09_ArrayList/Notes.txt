@@ -1,0 +1,56 @@
+ArrayList Class -
+    1. In Java, we need to declare size of an array before we can use it, once the size of an array is declared, Its hard to
+       change it.
+    2. To handle this issue we can use ArrayList class.
+    3. ArrayList allows us to create resizable arrays.
+    4. Unlike arrays, ArrayList can automatically adjust their size when we want to add or remove elements from it.
+    5. ArrayList is also known as dynamic arrays.
+    6. ArrayList can store different types of data types
+    7. ArrayList can store duplicate values
+    8. ArrayList can store multiple null values
+    9. ArrayList follows the insertion order
+    10. ArrayList doesn't follow sorting order because it follows insertion order
+    11. ArrayList are non-synchronised
+
+Internal working of ArrayList -
+    1. Initially, Array has certain capacity and as elements are added, it fills up.
+    2. When capacity is reached, the ArrayList creates a new larger array and copies the elements from old array to new array.
+    3. This process of resizing and copying is transparent to user.
+    4. However, frequent resizing operations can lead to performance overhead, so ArrayList increases its capacity by certain
+       factor to minimize frequency of resizing.
+
+       when we initially create an ArrayList, 10 size array will be created
+       List<Integer> list = new ArrayList<>();
+       list.add(2);
+       list.add(3);
+       list.add(8);
+       list.add(4);
+       list.add(6);
+       list.add(9);
+       list.add(5);
+       list.add(6);
+       list.add(1);
+       list.add(7);
+        ________________________________________
+       | 2 | 3 | 8 | 4 | 6 | 9 | 5 | 6 | 1 | 7 |
+       -----------------------------------------
+
+        and when we want to add more elements in this array then resizing will happen with formula,
+            newSize = ((oldSize * 3)/2) + 1 (standard formula)
+                    = ((10 * 3) / 2) + 1
+                    = 15 + 1
+                    = 16
+        then 16 size of new array will be created and will copy the data of old array in to new array
+        list.add(13);
+        list.add(16);
+        list.add(18);
+        list.add(15);
+        list.add(20);
+        list.add(11);
+         ______________________________________________________________________
+        | 2 | 3 | 8 | 4 | 6 | 9 | 5 | 6 | 1 | 7 | 13 | 16 | 18 | 15 | 20 | 11 |
+        -----------------------------------------------------------------------
+        So this will be our new array, it happens in background, we don't have to take care of it
+
+
+        Stating capacity of ArrayList - List<Integer> list = new ArrayList<>(100);

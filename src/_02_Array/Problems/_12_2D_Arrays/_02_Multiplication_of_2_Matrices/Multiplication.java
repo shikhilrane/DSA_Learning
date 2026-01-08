@@ -47,6 +47,57 @@ public class Multiplication {
 }
 
 /*
+    What the Question Wants (Problem Understanding):
+
+    The question says:
+        "Multiply two matrices"
+
+    This means:
+        - You are given two matrices (2D arrays)
+        - You need to multiply them using matrix multiplication rules
+        - This is NOT element-wise multiplication
+
+    Condition given by the question:
+        - Number of columns of first matrix (c1)
+          must be equal to number of rows of second matrix (r2)
+        - If c1 != r2, multiplication is NOT possible
+
+    What you are expected to do:
+        1. Check whether matrix multiplication is possible (c1 == r2)
+        2. Create a resultant matrix of size:
+               r1 x c2
+        3. For each cell (i, j) of result:
+               multiply i-th row of first matrix
+               with j-th column of second matrix
+               and add all products
+        4. Store the sum in result[i][j]
+        5. Print the resultant matrix
+
+    What the question does NOT want:
+        - No element-wise multiplication
+        - No transpose
+        - No sorting
+        - No shortcut formula
+
+    Example understanding:
+
+        First matrix (3 x 4)
+        Second matrix (4 x 2)
+
+        Since c1 == r2 (4 == 4),
+        multiplication is possible.
+
+        Resultant matrix size:
+            3 x 2
+
+    In short:
+        Multiply rows of the first matrix
+        with columns of the second matrix
+        to form the result.
+*/
+
+
+/*
                c1                              c2
                 V                               V
       {a00, a01, a02, a03},                 {b00, b01},

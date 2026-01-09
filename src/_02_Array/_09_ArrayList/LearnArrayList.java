@@ -4,7 +4,7 @@ import java.util.*;
 
 public class LearnArrayList {
     public static void main(String[] args) {
-        // ArrayList object
+        // _16_ArrayList object
         ArrayList<String> list = new ArrayList<>();
 
         // ------------------------ Collection Interface Methods ------------------------
@@ -151,7 +151,7 @@ public class LearnArrayList {
         // Final output
         System.out.println("Final list: " + list);
 
-        //------------------------ Deep understanding of ArrayList ------------------------
+        //------------------------ Deep understanding of _16_ArrayList ------------------------
         ArrayList<Integer> al = new ArrayList<>();
         // adding
         al.add(1);
@@ -191,9 +191,9 @@ public class LearnArrayList {
             System.out.println(x);
         }
 
-        // Internal working of ArrayList (Look for notes of ArrayList for better understanding)
+        // Internal working of _16_ArrayList (Look for notes of _16_ArrayList for better understanding)
         ArrayList<Integer> alSize1 = new ArrayList<>();     // Initial size if not defined by us then it will be 10 by default
-        ArrayList<Integer> alSize2 = new ArrayList<>(100);  // This is how we can define capacity of ArrayList, capacity = 100 but size = 0
+        ArrayList<Integer> alSize2 = new ArrayList<>(100);  // This is how we can define capacity of _16_ArrayList, capacity = 100 but size = 0
         ArrayList<Integer> alSize3 = new ArrayList<>(50);
         for (int i = 0; i < 15; i++) {
             alSize3.add(i);
@@ -201,8 +201,8 @@ public class LearnArrayList {
         System.out.println(alSize3);
         alSize3.trimToSize();   // this will make capacity of alSize3 to 15
 
-        // Type of creating ArrayList
-        // 1. By using ArrayList<>(); (can add object in middle of the two existing objects using add(index, object) and can set value of existing object using set(index, object))
+        // Type of creating _16_ArrayList
+        // 1. By using _16_ArrayList<>(); (can add object in middle of the two existing objects using add(index, object) and can set value of existing object using set(index, object))
         List<Object> creatingAl1 = new ArrayList<>();
         creatingAl1.add(5);
         creatingAl1.add(25);
@@ -219,19 +219,19 @@ public class LearnArrayList {
         // 3. By using List.of(); (Neither can add object in middle of the two existing objects nor can set value of existing object )
         List<Object> creatingAl3 = List.of(4,5,6);
 
-        // Adding in ArrayList
+        // Adding in _16_ArrayList
         // adding collection
         ArrayList<Integer> addingInAl = new ArrayList<>(al);
         addingInAl.add(2);
         addingInAl.add(45);
         addingInAl.add(85);
         System.out.println(addingInAl);
-        // adding List.of() in new ArrayList<>()
+        // adding List.of() in new _16_ArrayList<>()
         List<Integer> listof = List.of(11, 12, 13);
         addingInAl.addAll(listof);      // listof.addAll(addingInAl); (we can't do this because we know List.of() is unmodifiable)
         System.out.println(addingInAl);
 
-        // Removing from ArrayList
+        // Removing from _16_ArrayList
         // String
         ArrayList<String> fruits = new ArrayList<>();
         fruits.add("apple");
@@ -344,7 +344,7 @@ public class LearnArrayList {
         students.add(new Student("Alice", 3.5));
         students.add(new Student("Adam", 3.9));
 
-        System.out.println("List<Student> students = new ArrayList<>();\n" +
+        System.out.println("List<Student> students = new _16_ArrayList<>();\n" +
                 "        students.add(new Student(\"Charlie\", 3.5));\n" +
                 "        students.add(new Student(\"Bob\", 3.7));\n" +
                 "        students.add(new Student(\"Alice\", 3.5));\n" +

@@ -11,7 +11,7 @@ public class PartitionOfArrayEqualSum {
     }
 
     public static boolean givePartitionSum(int[] a){
-    int totalSum = findArraySum(a);             // Find total sum of the array
+        int totalSum = findArraySum(a);         // Find total sum of the array
         int prefixSum = 0;                      // Variable to store sum from left side
         for (int i = 0; i < a.length; i++) {    // Go through each element
             prefixSum = prefixSum + a[i];       // Add current element to prefix sum

@@ -20,3 +20,24 @@ public class StrictlyGreater {
         return count;                           // Return the count
     }
 }
+
+/*
+    i = 0
+        is 4 > 5? No
+    i = 1
+        is 2 > 5? No
+    i = 2
+        is 6 > 5? Yes, count = 1
+    i = 3
+        is 7 > 5? Yes, count = 2
+    i = 4
+        is 1 > 5? No
+    i = 5
+        is 9 > 5? Yes, count = 3
+    i = 6
+        is 5 > 5? No
+    i = 7
+        is 8 > 5? Yes, count = 4
+
+    Answer : count = 4
+*/

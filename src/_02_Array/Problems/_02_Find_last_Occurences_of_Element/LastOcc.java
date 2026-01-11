@@ -33,3 +33,24 @@ public class LastOcc {
         return lastIndex;                                   // Return the lastIndex
     }
 }
+
+/*
+    i = 0
+        is 5 == 5? Yes, index = 0
+    i = 1
+        is 2 == 5? No
+    i = 2
+        is 6 == 5? No
+    i = 3
+        is 5 == 5? Yes, index = 3
+    i = 4
+        is 1 == 5? No
+    i = 5
+        is 9 == 5? No
+    i = 6
+        is 5 == 5? Yes, index = 6
+    i = 7
+        is 9 == 5? No
+
+    Answer : lastIndex = 6
+*/

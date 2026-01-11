@@ -18,3 +18,16 @@ public class CheckSortedArray {
         return true;                                // If fails to satisfy above condition then return true
     }
 }
+
+/*
+    i = 0
+        is 1 > 4? No
+    i = 1
+        is 4 > 5? No
+    i = 2
+        is 5 > 7? No
+    i = 3
+        is 7 > 8? No
+
+    Answer : returned = true as it is a sorted array
+*/

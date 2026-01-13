@@ -31,3 +31,4 @@ bin/
 
 ### Ignore specific Java file ###
 src/Main.java
+src/LeetCode_Questions.txt

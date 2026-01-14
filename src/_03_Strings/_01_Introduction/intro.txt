@@ -1,0 +1,41 @@
+1. In java, String is basically an object that represents a sequence of char value.
+
+2. String is non-primitive type of data type
+
+3. An array of character works same as java String.
+    lets understand,
+    char c[] = {'R','A','M'};
+    String name  = "RAM";
+    here both are same, char c[] == String name
+    because as we know non-primitive data type (i.e. String) is made by using primitive data type (i.e. char)
+
+4. String is class which is already present in java which is present in java.util.String which is made by java developers, so that we can  directly use String
+
+5. How to create String:- 
+    a. By new keyword : (new is present in Scannner class so we have to import it) this is constructor type of method or it also called as by making object
+        Scannner scn = new Scannner(System);
+        String name = new String("Shikhil");
+    b. By string literals : (direct ways) String is heavily used in java, so java developers decided to add method by as String literal, by which we can make String as we make primitive data types.
+        (It is recommended that use this method to create String because it is more optimised way in memory, memory optimisation is automatically happens)
+        String firstName = "Shikhil";
+
+6. Understanding memory : 
+    there are 2 types of memory, reference memory and heap memory.
+        i. reference memory : reference memory stores names of string, objects and (left side of =)
+        ii. heap memory : heap memory stores values (right side of =)
+            e.g String name = "Shikhil";
+                String fname = "Shikhil";
+                String fn = new String("Shikhil);
+                    ^               ^
+                   ||              ||
+                   reference      heap
+                   memory         memory
+    refer image 1 for memory allocation of both type of String creation method. In heap memory, constructor type of method always create another space    so it takes more memory, while in String literal 'String constant pool' area is made and all the values of literal String gets stored there &  also refer to same value if values of two Strings are same. so that String literal is recommended to use to create String.
+
+7. Immutable String in java : 
+    String objects are immutable which means unmodifiable or unchangeable. Lets understand this 
+        String name = "Shikhil";
+        name = "Kishor"; 
+        name = name + " Rane";
+        o/p => "Kishor Rane"
+    when we created a String name = "Shikhil"; it got space in memory but when we update that name = "Kishor"; then name will start refering to "Kishor"; but "Shikhil" is still present in the memory it doesn't get vanished and "Shikhil" is still consuming memory, It actually gets vanished when garbage collector came and see that this "Shikhil" is not refered by any variable and clean that memory (refer image of name 2)

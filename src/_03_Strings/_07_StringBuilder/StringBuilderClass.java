@@ -64,3 +64,20 @@ public class StringBuilderClass {
 
     so we will see StringBuffer
 */
+
+/*
+    1. StringBuilder is mutable (can change its content).
+    2. Internally it uses a resizable char[] array.
+    3. Default capacity = 16 characters.
+    4. If created with a String:
+          capacity = 16 + string.length().
+    5. It maintains a count variable to track current length.
+    6. On append/insert, it first checks capacity.
+    7. If capacity is not enough, it grows as:
+          newCapacity = (oldCapacity * 2) + 2.
+    8. Old data is copied into the new bigger array.
+    9. append(), insert(), delete() modify the same object (no new object created).
+    10. Faster than String because no repeated object creation.
+    11. Not thread-safe (no synchronization).
+    12. toString() creates a new immutable String object.
+*/

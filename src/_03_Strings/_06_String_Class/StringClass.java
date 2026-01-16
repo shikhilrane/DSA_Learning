@@ -9,9 +9,17 @@ public class StringClass {
         System.out.println(str2);   // Will change because it will create a new string
 
         // 2
+        String string = "abc";
+        string += "def";            // This will not add "def" in string, instead it will create new string in String pool area so consume more memory
+        System.out.println(string);
+
+        String str = "xyz";
+        str += 10;                  // This will convert 10 to string and then create new string and then add "xyz" and "10" in that string
+        System.out.println(str);
+
         String result = "";
         for (int i = 0; i < 100 ; i++) {
-            result = result + " Hello ";
+            result = result + " Hello ";    // as this will run 100 times, then 100 new strings will be created and more memory will get consumed
         }
 //        System.out.println(result);
         // 1. In above case, new String will be created in memory for each and every iteration, which is not a memory efficient, Which can lead to poor performance

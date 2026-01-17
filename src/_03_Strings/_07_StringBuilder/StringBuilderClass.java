@@ -21,33 +21,37 @@ public class StringBuilderClass {
         sb.delete(5,16);
         System.out.println(sb);
 
-        // 5. Reverse
+        // 5. CharAt
+        System.out.println(sb.charAt(4));
+
+        // 6. Setting Character at specific index
+        sb.setCharAt(0,'M');
+        System.out.println(sb);
+
+        // 7. Reverse
         sb.reverse();
         System.out.println(sb);
 
-        // 6. CharAt
-        System.out.println(sb.charAt(4));
-
-        // 7. Length
+        // 8. Length
         System.out.println(sb.length());
 
-        // 8. SubString
+        // 9. SubString
         System.out.println(sb.substring(1,4));
 
-        // 9. IndexOf
+        // 10. IndexOf
         System.out.println(sb.indexOf("e"));
 
-        // 10. IndexOf with fromIndex
+        // 11. IndexOf with fromIndex
         System.out.println(sb.indexOf("l",8));
 
-        // 11. Delete character at
+        // 12. Delete character at
         System.out.println(sb.deleteCharAt(8));
 
-        // 12. Method Chaining
+        // 13. Method Chaining
         sb.append("3").reverse().replace(2,4, "hii");
         System.out.println(sb);
 
-        // 13. Converting to Immutable string
+        // 14. Converting to Immutable string
         String str = sb.toString();
         System.out.println(str);
 

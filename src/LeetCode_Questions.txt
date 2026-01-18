@@ -11,3 +11,4 @@ Arrays :
 
 String :
     1. 14 = Longest Common Prefix
+    2. 412. Fizz Buzz

@@ -1,0 +1,110 @@
+Time and Space Complexity :
+    1. Time and Space Complexity gives the performance of the code with respect to time and space respectively.
+    2. It is a time an algorithm takes as the input size increases.
+    3. Definitions :
+        Time Complexity : Time Complexity tells how the execution time of an algorithm grows as the input size grows.
+        Space Complexity : Space Complexity tells how the memory usage of an algorithm grows as the input size grows.
+
+Why it is IMPORTANT :
+    1. If there are multiple ways (algorithms) to solve the problem, then which algorithm is better wrt time and space.
+    2. Like algorithm that consumes lesser time and space when input size increases, is the better one
+    3. So,
+        It is important to think of algorithm that can consume lesser execution time and lesser memory usage during larger scale (i.e. Input)
+
+Where does Time and Complexity matter :
+    1. DOESN'T MATTER : in Pet project, small project where number of users are small or in stagnant where number of users are small and won't grow up
+    2. MATTERS : In Production Level Projects, Where number of users are large and will grow up in future as well.
+        On Ecommerce website,
+            Bad Algorithm :
+                1. If we are looking for some product and to fetch the details of the products, it takes more than enough time then there must be used bad Algorithms. So that It will slow down the system.
+                2. Also, It will hurt the user experience
+                3. It will increase the server load as well so that single server can only cater few users
+            Good Algorithm :
+                1. If we are looking for some product and details of that product is fetching easily, then there must be good algorithms used
+                2. With this type of algorithm, server can cater tremendous number of users
+
+Sorting Example :
+    If there are three algorithms (Bubble Sort, Merge Sort, and Java Built-in Sort) that perform sorting operations on products in an e-commerce website, their performance can be compared like this:
+    Performance Difference (Size vs Time) -
+        +-------------+-------------+-------------+-----------+
+        | Input Size  | Bubble Sort | Merge Sort  | Java Sort |
+        +-------------+-------------+-------------+-----------+
+        | 1000        | 5           | 1           | 2         |
+        | 5000        | 8           | 1           | 1         |
+        | 10000       | 69          | 7           | 4         |
+        | 50000       | 3174        | 12          | 2         |
+        | 100000      | 13307       | 12          | 6         |
+        +-------------+-------------+-------------+-----------+
+    As number of product increases,
+        Bubble Sort (Worst)
+            Time increases drastically.
+            It becomes very slow for large inputs.
+            Completely unsuitable for production-scale systems.
+        Merge Sort (Average)
+            Time increases slowly and remains manageable.
+            Much better than Bubble Sort for large inputs.
+            Good for large datasets but uses extra memory.
+        Java Built-in Sort (Best)
+            Performs the best in most cases.
+            Very fast and reliable for real-world data.
+            Best balance of speed and memory.
+
+    As the input size grows, Bubble Sort becomes impractical, Merge Sort performs well, and Java’s built-in sort performs the best overall.
+
+Time vs Space Trade Off :
+    Time vs Space Trade off shows the relation between time and space. like if time increases then space increases or decreases
+    Time : How much maximum time your program takes to execute for a given input size. (i.e. Maximum time at any point of time during Execution)
+           Measures the upper bound on the running time of an algorithm as input size grows.
+    Space : How much maximum space your program takes to execute for a given input size. (i.e. Maximum space at any point of time during Execution)
+            Measures the upper bound on the extra memory required by an algorithm as input size grows.
+    Trade Off :
+        Faster algorithms often use more memory
+        Memory-efficient algorithms may run slower
+    General rule :
+        More Space -> Faster Execution
+        Less Space -> Slower Execution
+    So,
+        Time -----> Inversely Proportional -----> Space
+
+Algorithm Performance :
+    We don't compare algorithms using our time system like milliSeconds, seconds, minutes, etc.
+    Because,
+        1. Hardware dependent
+            Execution time changes based on CPU speed, RAM, SSD, etc.
+            Same code runs faster on a powerful machine and slower on a weak machine.
+        2. Language dependent
+            Java, Python, C++, etc., execute at different speeds.
+            The same algorithm will show different timings in different languages.
+        3. Compiler / JVM / Optimizations
+            JIT, compiler optimizations, garbage collection, etc., affect real time.
+        4. Environment dependent
+            Background processes, OS load, network activity all change execution time.
+        5. Not scalable for comparison
+            Real time only shows current performance, not how performance grows when input increases.
+
+Upper Bound and Lower Bound :
+    1. Upper Bound (Big-O notation → O)
+        Upper bound means the maximum time or space an algorithm can take in the worst case. = “At most, how bad can it get?”
+    2. Lower Bound (Omega notation → Ω)
+        Lower bound means the minimum time or space an algorithm will take in the best case. = “At least, how much time is guaranteed?”
+    3. Tight Bound (Theta notation → Θ) (for understanding)
+       When upper and lower bounds are the same, we use Θ. = "Exact growth rate."
+    NOTE : We usually focus on Upper Bound (Big-O) in interviews and real systems, because it guarantees performance even in the worst situation.
+
+Best, Worst and Average Case
+    1. Best Case (Big Ω) : Algorithm works as fast as possible. Happens only for ideal inputs
+                   E.g. Mathematical based time required to access first element of the LinkedList
+    2. Worst Case (Big Ω) : Algorithm works as fast as possible.
+                    Can't get worse than this.
+                    this is what interview focus on
+                    Upper bound of worst case matters here (i.e. maximum time to access worst case's last input)
+                    e.g. Mathematical based time required to access last element of the LinkedList
+    3. Average Element (Big Θ) : Performance on typical inputs
+
+Why worst case matters more? :
+    Gives guarantee and safety, about maximum time (upper bound) in worst case
+    Like specific algorithm won't consume time more than this time in worst case
+    Prevents,
+        1. System Crashes
+        2. SLA Violations
+        3. Unexpected Slowdowns

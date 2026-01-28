@@ -1,0 +1,248 @@
+Growth in Time and Space Complexity :
+
+    1. Growth in Time and Space Complexity describes how an algorithm’s execution time and memory usage scale as the size of input increases.
+
+    2. Growth in time complexity means how fast the execution time of an algorithm increases when the input size increases. (The rate at which an algorithm becomes slower as the input becomes larger so that execution time increases with input size.)
+
+    3. Growth in space complexity means how fast the memory usage of an algorithm increases when the input size increases. (The rate at which memory consumption increases as input becomes larger so that memory usage increases with input size.)
+
+    4. Following table shows how different growth rate behaves as n increases
+                    n    | n¹ (Linear) | n² (Quadratic) | n³ (Cubic)
+                    -----------------------------------------------
+                    0    | 0           | 0              | 0
+                    1    | 1           | 1              | 1
+                    2    | 2           | 4              | 8
+                    3    | 3           | 9              | 27
+                    4    | 4           | 16             | 64
+                    5    | 5           | 25             | 125
+        O(n) – Linear
+            Time grows directly with input.
+            If input doubles, time doubles.
+            Example: Single loop.
+
+        O(n²) – Quadratic
+            Time grows very fast.
+            If input doubles, time becomes 4 times.
+            Example: Nested loops.
+            Bad for large data.
+
+        O(n³) – Cubic
+            Explodes extremely fast.
+            Practically unusable for big input.
+
+        Observation:
+            For small n, all look similar.
+            For large n, higher powers explode.
+
+    5. These notes perfectly explain why we avoid higher powers like n², n³ in production systems.
+
+    6. So, Growth dominates everything in Data Structure and Algorithms. It's not about how fast an algorithm is today, but how well it scales tomorrow.
+
+
+
+Why Programming Language doesn't matter :
+
+    1. Assume input sizes: 1K, 100K, 10M just to show growth. Numbers are relative, not real time.
+        | Language | Complexity | n = 1,000 (Small) | n = 100,000 (Medium) | n = 10,000,000 (Large) |
+        | -------- | ---------- | ----------------- | -------------------- | ---------------------- |
+        | C++      | O(n)       | Very Fast         | Very Fast            | Fast                   |
+        | C++      | O(n²)      | Fast              | Very Slow            | Practically Unusable   |
+        | Java     | O(n)       | Fast              | Fast                 | Moderate               |
+        | Java     | O(n²)      | Slow              | Extremely Slow       | Unusable               |
+        | Python   | O(n)       | Moderate          | Slow                 | Still Usable           |
+        | Python   | O(n²)      | Very Slow         | Unusable             | Impossible             |
+
+        Now observe something important:
+        1. For small input (1K):
+            C++ O(n²) (Fast) can look faster than Python O(n) (Moderate)
+            Language speed dominates
+
+        2. For medium input (100K):
+            Python O(n) (Slow) beats C++ O(n²) (Very Slow)
+            Growth starts dominating
+
+        3. For large input (10M):
+            Only O(n) algorithms survive
+            O(n²) dies in every language
+
+    2. So the rule becomes crystal clear:
+        | Factor               | Controls                          |
+        | -------------------- | --------------------------------- |
+        | Programming Language | Constant speed (small difference) |
+        | Time Complexity      | Growth rate (huge difference)     |
+
+    3. Another compact version:
+        | Input Size | Best Choice                        |
+        | ---------- | ---------------------------------- |
+        | Small      | Any language + any algorithm       |
+        | Medium     | Good algorithm matters             |
+        | Large      | Only low-growth algorithms survive |
+
+    4. C++ makes your program faster, Java makes it portable, Python makes it easier. But only Time Complexity decides whether your program will survive at scale.
+
+
+
+
+Asymptotic Annotations :
+    Asymptotic notations are used to describe the growth of time and space complexity of an algorithm as input size n becomes very large.
+    They ignore machine, language, and constant factors and focus only on scalability.
+
+    1. Big-O Notation → O( ) (Upper Bound / Worst Case)
+           Describes the maximum time or space an algorithm can take.
+           Guarantees performance in the worst situation.
+           Gives only the upper bound.
+           Most commonly used in interviews and real systems.
+           Meaning : “The algorithm will not grow faster than this.”
+           O( ) = Upper Bound = Worst Case
+
+
+    2. Omega Notation → Ω( ) (Lower Bound / Best Case)
+           Describes the minimum time or space required.
+           Tells how fast an algorithm can be at best.
+           Gives only the lower bound.
+           Meaning : “The algorithm will take at least this much time.”
+           Ω( ) = Lower Bound = Best Case
+
+    3. Theta Notation → Θ( ) (Tight Bound / Exact Growth)
+           When upper and lower bounds are the same.
+           Describes the exact growth rate.
+           Gives both upper and lower bounds.
+           This is the tight bound.
+           Meaning : “The algorithm always grows at this rate.”
+           O(n) and Ω(n)
+
+    Summary by Table
+        | Notation | Name  | Case        | Meaning                      |
+        | -------- | ----- | ----------- | ---------------------------- |
+        | O        | Big-O | Worst Case  | Maximum growth (Upper bound) |
+        | Ω        | Omega | Best Case   | Minimum growth (Lower bound) |
+        | Θ        | Theta | Tight Bound | Exact growth rate            |
+
+    Summarised :
+        We mostly use O( ) in practice (safety guarantee).
+        Ω( ) is used for theoretical minimum.
+        Θ( ) is used when we know exact growth.
+
+
+    Understanding By following example
+        function : f(n) = n² + 10n + 100
+        Now see how each term grows as n increases:
+            n      | n²             | 10n       | 100   | Total f(n)
+            --------------------------------------------------------------
+            2      | 4              | 20        | 100   | 124
+            10     | 100            | 100       | 100   | 300
+            100    | 10,000         | 1,000     | 100   | 11,100
+            1,000  | 1,000,000      | 10,000    | 100   | 1,010,100
+            10,000 | 100,000,000    | 100,000   | 100   | 100,100,100
+            100,000| 10,000,000,000 | 1,000,000 | 100   | 10,001,000,100
+
+        Now look carefully:
+            At n = 2
+            100 dominates.
+
+            At n = 10
+            All terms look similar.
+
+            At n = 100
+            n² becomes much bigger than 10n and 100.
+
+            At n = 1,000 and above
+            n² completely dominates everything.
+
+        So asymptotically:
+            f(n) = n² + 10n + 100  ≈  n²
+            f(n) ∈ O(n²)
+            We ignore smaller terms and constants when input size increases because their contribution becomes negligible compared to the dominant term.
+            This is the core idea of Asymptotic Analysis.
+
+        Conclusion Asymptotic Notation:
+           We only care about how fast a function grows when n becomes very large.
+           The highest power of n always dominates.
+           Lower power terms and constants become insignificant.
+
+        Final takeaway:
+           | Term Type     | Importance when n is large |
+           | ------------- | -------------------------- |
+           | Highest power | 100% matters               |
+           | Lower powers  | Almost negligible          |
+           | Constants     | Ignored                    |
+
+
+
+
+
+
+Analysis of Bigger term with constant:
+    Constants change performance slightly, but powers change scalability.
+    Growth is decided by the highest power of n, not by the constant in front of it.
+
+    Consider two functions:
+        f(n) = 5n² + 10n + 100
+        g(n) = n²
+
+    Asymptotically we ignore smaller terms:
+        f(n) ≈ 5n²
+        g(n) = n²
+
+    Now compare their growth by taking two inputs,
+        Input 1: n
+        Input 2: 10n
+
+    For,
+        f(n) : Output1 = 5n²
+               Output2 = 5(10n)²
+                       = 5 × 100n²
+                       = 500n²
+        Output2 / Output1 = 500n² / 5n² = 100
+
+        g(n) : Output1 = n²
+               Output2 = (10n)² = 100n²
+        Output2 / Output1 = 100n² / n² = 100
+
+    So we can conclude that for any number of n growth rate for both functions is same
+
+    General Rule:
+    c · n^k  ≡  n^k   (asymptotically)
+
+    Understanding Growth rate with 5n² vs n², and n³ and n²
+    1. Comparing 5n² vs n² (only constant difference)
+            | n      | n²          | 5n²         | Ratio (5n² / n²) |
+            | ------ | ----------- | ----------- | ---------------- |
+            | 10     | 100         | 500         | 5×               |
+            | 100    | 10,000      | 50,000      | 5×               |
+            | 1000   | 1,000,000   | 5,000,000   | 5×               |
+            | 10,000 | 100,000,000 | 500,000,000 | 5×               |
+
+        Here, Ratio doesn't changes even when input size increases, so difference of growth remains constant for any value of input
+
+        Observation:
+            The ratio is always 5.
+            Growth pattern is the same.
+            Only speed changes, not scalability.
+            5n² and n² → Θ(n²)
+
+        Why no real difference?
+            Because multiplying by a constant just scales the value, it does not change how fast it grows.
+
+    2. Comparing n³ vs n² (power difference)
+            | n      | n²          | n³                | Ratio (n³ / n²) |
+            | ------ | ----------- | ----------------- | --------------- |
+            | 10     | 100         | 1,000             | 10×             |
+            | 100    | 10,000      | 1,000,000         | 100×            |
+            | 1000   | 1,000,000   | 1,000,000,000     | 1000×           |
+            | 10,000 | 100,000,000 | 1,000,000,000,000 | 10,000×         |
+
+        Here, Ratio does changes when input size increases, so difference of growth changes for different values of input
+
+        Observation:
+            Ratio is not constant.
+            Ratio increases with n.
+            n³ becomes exponentially larger than n².
+
+        Why difference?
+            n³ grows much faster than n²
+            n³ dominates n² for large n
+
+    Smart conclusion:
+        Constants only affect speed.
+        Powers affect scalability.

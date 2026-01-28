@@ -1,0 +1,41 @@
+Θ (Theta) Notation :
+    Theta notation is used to describe the exact growth rate of an algorithm.
+    It gives both the upper bound and the lower bound of a function.
+    In simple words : Θ tells us how an algorithm really grows.
+
+    If an algorithm is Θ(f(n)), it means : It grows at the same rate as f(n)
+                                           Not faster, not slower.
+
+    Mathematical definition : A function T(n) is Θ(f(n)) if there exist positive constants c1, c2, and n0 such that:
+        c1 · f(n) ≤ T(n) ≤ c2 · f(n)   for all n ≥ n0
+        This means:
+            T(n) is sandwiched between two constant multiples of f(n).
+
+    Why Θ is important:
+        Gives the most accurate complexity.
+        Removes ambiguity between best and worst cases.
+        Shows real growth behavior.
+        Useful for comparing algorithms precisely.
+
+    Example :
+        T(n) = 5n² + 2n + 13
+
+        Table :
+            | n   | 5n²    | 2n  | 13 | Total T(n) |
+            | --- | ------ | --- | -- | ---------- |
+            | 1   | 5      | 2   | 13 | 20         |
+            | 10  | 500    | 20  | 13 | 533        |
+            | 100 | 50,000 | 200 | 13 | 50,213     |
+
+        Observation:
+            As n grows, 5n² dominates.
+            2n and 13 become negligible.
+
+        So,
+            T(n) ≈ 5n² ≈ n²
+
+        Therefore
+            T(n) ∈ Θ(n²)
+
+        One-liner:
+            In a polynomial, the term with the highest power of n decides the Θ complexity.

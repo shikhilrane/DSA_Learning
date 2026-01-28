@@ -224,13 +224,13 @@ Analysis of Bigger term with constant:
         Why no real difference?
             Because multiplying by a constant just scales the value, it does not change how fast it grows.
 
-    2. Comparing n³ vs n² (power difference)
+    2. Comparing n³ vs 5n² (power difference)
             | n      | n²          | n³                | Ratio (n³ / n²) |
             | ------ | ----------- | ----------------- | --------------- |
-            | 10     | 100         | 1,000             | 10×             |
-            | 100    | 10,000      | 1,000,000         | 100×            |
-            | 1000   | 1,000,000   | 1,000,000,000     | 1000×           |
-            | 10,000 | 100,000,000 | 1,000,000,000,000 | 10,000×         |
+            | 10     | 500         | 1,000             | 10×             |
+            | 100    | 50,000      | 1,000,000         | 100×            |
+            | 1000   | 5,000,000   | 1,000,000,000     | 1000×           |
+            | 10,000 | 500,000,000 | 1,000,000,000,000 | 10,000×         |
 
         Here, Ratio does changes when input size increases, so difference of growth changes for different values of input
 
@@ -240,8 +240,8 @@ Analysis of Bigger term with constant:
             n³ becomes exponentially larger than n².
 
         Why difference?
-            n³ grows much faster than n²
-            n³ dominates n² for large n
+            n³ grows much faster than 5n²
+            n³ dominates 5n² for large n
 
     Smart conclusion:
         Constants only affect speed.

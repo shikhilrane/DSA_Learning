@@ -1,0 +1,17 @@
+Big O and Big Omega Notations :
+    Why do we need Big O and Big Omega?
+        1. Algorithms don't run in exact seconds everywhere
+        2. We need a mathematical way to describe performance
+        3. Big O And Big Omega helps :
+            1. Talks about limits of algorithm performance
+            2. Compare algorithms fairly
+            3. Ignore hardware, language and OS difference
+            4. Define
+                Big O -> It talks about how bad it can get
+                Big Omega -> It talks about how good it can be
+            5. Big O and Big Omega talks about one side only
+            6. In Interview, Only Big O is used
+
+Big O Notation :
+    Describe maximum growth rate, like it can't be worse than this limit
+    It guarantees about worst case

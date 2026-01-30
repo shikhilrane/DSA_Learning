@@ -7,7 +7,9 @@
                                            Not faster, not slower.
 
     Mathematical definition : A function T(n) is Θ(f(n)) if there exist positive constants c1, c2, and n0 such that:
-        c1 · f(n) ≤ T(n) ≤ c2 · f(n)   for all n ≥ n0
+        c1·f(n) ≤ T(n) ≤ c2·f(n)   for all n ≥ n0
+        Lower Bound <= Actual <= Upper bound
+        Best Case <= Actual(Theta) <= Worst Case
         This means:
             T(n) is sandwiched between two constant multiples of f(n).
 
@@ -18,14 +20,22 @@
         Useful for comparing algorithms precisely.
 
     Example :
-        T(n) = 5n² + 2n + 13
+        T(n) : 5n² <= 5n²+2n+13 <= 8n²
 
         Table :
-            | n   | 5n²    | 2n  | 13 | Total T(n) |
-            | --- | ------ | --- | -- | ---------- |
-            | 1   | 5      | 2   | 13 | 20         |
-            | 10  | 500    | 20  | 13 | 533        |
-            | 100 | 50,000 | 200 | 13 | 50,213     |
+            | n   | c₁·g(n) = 5n² | T(n) = 5n²+2n+13 | c₂·g(n) = 8n² |
+            | --- | ------------- | ---------------- | ------------- |
+            | 1   | 5             | 20               | 8             |
+            | 2   | 20            | 37               | 32            |
+            | 5   | 125           | 148              | 200           |
+            | 10  | 500           | 533              | 800           |
+            | .   | .             | .                | .             |
+            | .   | .             | .                | .             |
+            | 100 | 50,000        | 50,213           | 80,000        |
+
+            5n² → lower bound
+            8n² → upper bound
+            n² → tight bound (Θ) ✅
 
         Observation:
             As n grows, 5n² dominates.

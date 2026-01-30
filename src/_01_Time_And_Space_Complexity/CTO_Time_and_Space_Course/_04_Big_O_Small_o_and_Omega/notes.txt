@@ -9,9 +9,237 @@ Big O and Big Omega Notations :
             4. Define
                 Big O -> It talks about how bad it can get
                 Big Omega -> It talks about how good it can be
-            5. Big O and Big Omega talks about one side only
+            5. Big O and Big Omega talks about one side only like upper bound for Big O and lower bound for Big Omega.
             6. In Interview, Only Big O is used
 
-Big O Notation :
-    Describe maximum growth rate, like it can't be worse than this limit
-    It guarantees about worst case
+    Big O Notation :
+        1. Describe maximum growth rate, like it can't be worse than this limit
+        2. It guarantees about worst case i.e. gives Upper Bound
+        3. It written as O(g(n))
+        4. e.g If algorithm has time complexity O(n²), then it won't be worse than n², that is worst case time complexity of that particular algorithm
+        5. Big O :
+            0 <= f(n) <= c⋅g(n)       for all n >= n0 (n0 = the minimum input size after which the inequality holds true for all larger values of n.)
+            where,
+                f(n) = actual time that algorithm takes for input size n (real behaviour)
+                g(n) = comparison function (Upper bound)
+                c = positive constant
+            example :
+                f(n)   = 3n²+2n+5  (Actual value) Big Θ (theta)
+                c.g(n) = 8n²       (Upper Bound)  Big O
+                so, 3n²+2n+5 <= 8n²
+                for,
+                    n       f(n) = 3n²+2n+5    c.(g(n)) = 8n²
+                    0             5                 0
+                    1             10                8
+                    2             21                32
+                    3             38                72
+                    .             .                 .
+                    .             .                 .
+                    .             .                 .
+                    10            325               800
+                here,
+                    our actual ans 325 is less than 800 for the function so it proves that 0 ≤ f(n) ≤ c⋅g(n)
+                So,
+                    We proved that, 0 <= f(n) <= c⋅g(n)
+
+    Big Ω Notation :
+        1. Describes minimum growth rate, i.e. algorithm is at least this fast
+        2. It guarantees about best / lower bound case, i.e. gives Lower Bound
+        3. It is written as Ω(g(n))
+        4. If an algorithm has time complexity Ω(n²), then for sufficiently large inputs, the algorithm will take at least proportional to n² time.
+        5. Big Ω :
+            0 ≤ c⋅g(n) ≤ f(n)       for all n >= n0 (n0 = the minimum input size after which the inequality holds true for all larger values of n.)
+            where,
+                f(n) = actual time that algorithm takes for input size n (real behaviour)
+                g(n) = comparison function (lower bound)
+                c = positive constant
+            example :
+                f(n)   = 3n²+2n+5  (Actual value) Big Θ (theta)
+                c.g(n) = 3n²       (lower Bound)  Big Ω
+                so, 3n² <= 3n²+2n+5
+                for,
+                    |  n   | c·g(n) = 3n² | f(n) = 3n²+2n+5 |
+                    |------| ------------ | --------------- |
+                    |  0   |      0       |        5        |
+                    |  1   |      3       |        10       |
+                    |  2   |      12      |        21       |
+                    |  3   |      27      |        38       |
+                    |  .   |      .       |        .        |
+                    |  .   |      .       |        .        |
+                    |  10  |      300     |        325      |
+                here,
+                    our actual ans 325 is greater than 300 for the function so it proves that 0 ≤ c⋅g(n) ≤ f(n)
+                So,
+                    We proved that, 0 <= c⋅g(n) <= f(n)
+
+    Big Θ (Theta) Notation :
+        1. Describes the exact (tight) growth rate of an algorithm
+        2. It guarantees both upper bound and lower bound
+        3. It is written as Θ(g(n))
+        4. If an algorithm has time complexity Θ(n²), then for sufficiently large inputs, its running time grows proportional to n²
+        5. Big Θ :
+            0 ≤ c₁·g(n) ≤ f(n) ≤ c₂·g(n)    for all n >= n0 (n0 = the minimum input size after which the inequality holds true for all larger values of n.)
+            where,
+                f(n) = actual time that algorithm takes for input size n (real behaviour)
+                g(n) = comparison function (tight bound)
+                c₁, c₂ = positive constant
+            Example :
+                f(n)    = 3n² + 2n + 5  (Actual value) Big Θ (theta)
+                c₁.g(n) = 3n²
+                c₂.g(n) = 8n²
+                So, 3n² <= 3n²+2n+5 <= 8n²
+                for,
+                    | n  | c₁·g(n) = 3n² | f(n) = 3n²+2n+5 | c₂·g(n) = 8n² |
+                    | -- | ------------- | --------------- | ------------- |
+                    | 0  | 0             | 5               | 0             |
+                    | 1  | 3             | 10              | 8             |
+                    | 2  | 12            | 21              | 32            |
+                    | 3  | 27            | 38              | 72            |
+                    | .  | .             | .               | .             |
+                    | .  | .             | .               | .             |
+                    | 10 | 300           | 325             | 800           |
+                here,
+                    our actual ans 325 is greater than 300(i.e c₁·g(n) = 3n²) and lower than (c₂·g(n) = 8n²) for the function
+                    so it proves that 0 <= c₁·g(n) <= f(n) <= c₂·g(n)
+
+
+
+    SHORT UNDERSTANDING :
+        1. O(g(n)) -> upper bound (worst case growth)   ->  0 <= f(n) <= c⋅g(n)
+        2. Ω(g(n)) -> lower bound (best/minimum growth) ->  0 <= c⋅g(n) <= f(n)
+        3. Θ(g(n)) -> actual / tight bound              ->  0 <= c₁·g(n) <= f(n) <= c₂·g(n)
+        NOTE : Higher term at g(n) at all 3 conditions will be considered
+               like if any of 3 , g(n) = n² , then tha will be considered
+        Example:
+                If f(n) = 3n² + 2n + 5,
+                then O(n²), Ω(n²), and Θ(n²) are determined using n².
+
+
+
+
+    Visualisation :
+                                        Ω (Big Ω)
+                    -----------------------------------------------------------
+                    ^                                                         ^
+                    |                                                         |
+                    |                                                         |
+                    |                                                         |
+                    |                                                         |
+                    0----------------------c1·g(n)---------------------------f(n)-------------------------------c2·g(n)
+                    |                        |                                |                                   |
+                    |                        |                                V                                   |
+                    |                        V                              Actual                                V
+                    |                        ----------------------------------------------------------------------
+                    |                                                      Θ (Big Θ)                              |
+                    V                                                                                             V
+                    -----------------------------------------------------------------------------------------------
+                                                                  O (Big O)
+
+
+
+    Insertion Sort Example : for 3n²+2n+2
+                                                               Insertion Sort
+                                                                    INPUT
+                                                                      |
+                                              -------------------------------------------------
+                                              |                       |                       |
+                                              v                       v                       v
+
+                                       +----------------+      +-------------------+     +--------------------+
+                                       |   Best Case    |      |    Average Case   |     |     Worst Case     |
+                                       |  (Ascending    |      |                   |     |   (Reverse Order)  |
+                                       |   Order)       |      |                   |     |                    |
+                                       +----------------+      +-------------------+     +--------------------+
+                                              |                       |                        |
+                                              |                       |                        |
+                                          f(n) = 3n + 8          f(n) = 2n² + n + 8        f(n) = 3n²
+                                              |                       |                        |
+                                              |                       |                        |
+                                            Θ(n)                    Θ(n²)                    Θ(n²)
+                                            O(n)                    O(n²)                    O(n²)
+                                            Ω(n)                    Ω(n²)                    Ω(n²)
+
+        As we only care about worst case of any condition, which is important for us to understand
+        so for,
+            Ascending Order : O(n)
+            Average Case    : O(n²)
+            Reverse Order   : O(n²)
+        is the worst case analysis for Insertion Sort Algorithm.
+        The worst-case time complexity of Insertion Sort is O(n²), which occurs when the input array is in reverse order.
+
+
+
+
+
+
+
+
+Small o and Small ω :
+    Big O and Big -->  Our algorithm can be <= (i.e. less than or equal to) given condition
+    Small o and Small ω --> Our algorithm can be strictly < (i.e. less than) given condition
+
+    Small o :
+        1. Small o describes a strict UPPER bound, i.e. actual function grows strictly SLOWER than g(n)
+        2. It is a stronger form of Big O
+        3. It is written as o(g(n))
+        4. If an algorithm has time complexity o(n²), then for sufficiently large inputs, the running time grows slower than n²
+        5. small o :
+            0 ≤ f(n) < c⋅g(n)      for all n ≥ n₀
+            where,
+                f(n) = actual time that algorithm takes for input size n (real behaviour)
+                g(n) = comparison function (strict upper bound)
+                c = positive constant
+            Example :
+                f(n)   = 3n + 8        (Actual value)
+                c.g(n) = n²
+            So, 3n + 8 < c⋅n²   for sufficiently large n
+            for,
+                | n   | f(n) = 3n+8 | g(n) = n² |
+                | --- | ----------- | --------- |
+                | 1   | 11          | 1         |
+                | 2   | 14          | 4         |
+                | 5   | 23          | 25        |
+                | 10  | 38          | 100       |
+                | 100 | 308         | 10,000    |
+            Observation :
+                As n grows, f(n) grows much slower than g(n)
+            so it proves that 0 <= f(n) < c⋅g(n)
+
+    Small ω :
+        1. Describes strict lower bound, i.e. actual function grows strictly faster than g(n)
+        2. It is a stronger form of Big Ω
+        3. It is written as ω(g(n))
+        4. If an algorithm has time complexity ω(n), then for sufficiently large inputs, the running time grows faster than n
+        5. small ω :
+            0 ≤ c⋅g(n) < f(n)      for all n ≥ n₀
+            where,
+                f(n) = actual time that algorithm takes for input size n (real behaviour)
+                g(n) = comparison function (strict lower bound)
+                c = positive constant
+            Example :
+                f(n)   = 3n² + 2n + 5        (Actual value)
+                c.g(n) = n
+            So, c⋅n < 3n² + 2n + 5   for sufficiently large n
+            for,
+                | n   | c·g(n) = n | f(n) = 3n²+2n+5 |
+                | --- | ---------- | --------------- |
+                | 1   | 1          | 10              |
+                | 2   | 2          | 21              |
+                | 5   | 5          | 90              |
+                | 10  | 10         | 325             |
+                | 100 | 100        | 30,205          |
+            Observation :
+                As n grows, f(n) grows much faster than g(n)
+            We proved that, 0 <= c⋅g(n) < f(n)
+
+    Note : Small o and Small ω doesn't matter a lot. Just get understanding of it
+
+
+
+
+Short Notes :
+    O(g(n))   → at most
+    Ω(g(n))   → at least
+    Θ(g(n))   → exact
+    o(g(n))   → strictly less
+    ω(g(n))   → strictly more
